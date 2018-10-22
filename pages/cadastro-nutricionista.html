@@ -12,49 +12,69 @@
     
     <!-- FORM Cadastro -->
     <section>
-        <form action="/action_page.php">
+        <div id="container-nutricionista">
             <div class="row">
-                <div class="col-md-3"></div>
+                <div class="col-md-2"></div>
 
-                <div id="form-dados" class="col-md-6">
+                <form action="/action_page.php" class="col-md-8 form-control-feedback">
 
-                    <div class="formgroup form-control-feedback">
-                        <h1>Cadastro de Nutricionista</h1>
-                        <label for="nome">Nome:</label>
-                        <input type="text" class="form-control" placeholder="Digite seu nome" required="required">
+                    <h1>Cadastro de Nutricionista</h1>
+                    <div class="form-row">
+                        <div class="form-group form-control-feedback col-md-6">
+                            <label for="nome">Nome:</label>
+                            <input type="text" class="form-control" placeholder="Digite seu nome" required="required">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="usuario">Usuário: </label>
+                            <input type="text" class="form-control" placeholder="Digite seu nome de usuário" required="required">
+                        </div>
+                    </div>
+    
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="email">Email: </label>
+                            <input type="email" class="form-control" placeholder="Digite seu email" required="required">
+                        </div>
+    
+                        <div class="form-group col-md-6">
+                            <label for="senha">Senha: </label>
+                            <input type="password" class="form-control" placeholder="Digite sua senha" required="required">
+                        </div>
                     </div>
 
-                    <div class="formgroup">
-                        <label for="usuario">Usuário: </label>
-                        <input type="text" class="form-control" placeholder="Digite seu nome de usuário" required="required">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="cpf">CPF: (Utilize apenas números) </label>
+                            <input type="text" class="form-control" placeholder="Digite seu CPF" required="required">
+                        </div>
+        
+                        <div class="form-group col-md-6">
+                            <label for="idade">Idade: </label>
+                            <input name="idade" type="number" class="form-control" placeholder="Digite sua idade" value="18" min="18" max="90" required="required">
+                        </div>
                     </div>
 
-                    <div class="formgroup">
-                        <label for="email">Email: </label>
-                        <input type="email" class="form-control" placeholder="Digite seu email" required="required">
-                    </div>
-
-                    <div class="formgroup">
-                        <label for="senha">Senha: </label>
-                        <input type="password" class="form-control" placeholder="Digite sua senha" required="required">
-                    </div>
-
-                    <div class="formgroup">
-                        <label for="cpf">CPF: (Utilize apenas números) </label>
-                        <input type="text" class="form-control" placeholder="Digite seu CPF" required="required">
-                    </div>
-
-                    <div class="formgroup">
-                        <label for="idade">Idade: </label>
-                        <input name="idade" type="number" class="form-control" placeholder="Digite sua idade" value="18" min="18" max="90" required="required">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="cpf">CRN: (Utilize apenas números) </label>
+                            <input type="text" class="form-control" placeholder="Digite seu CRN" required="required">
+                        </div>
+    
+                        <div class="form-group col-md-6">
+                            <label for="idade">Escolaridade: </label>
+                            <select class="custom-select">
+                                <option value="Ensino Superior Incompleto (Estágio)">Ensino Superior Incompleto (Estágio)</option>
+                                <option value="Ensino Superior Completo">Ensino Superior Completo</option>
+                            </select>
+                        </div>
                     </div>
 
                     <small class="form-text text-muted obs-dados">Seus dados não serão compartilhados com ninguém.</small>
                     <input type="submit" value="Enviar" class="btn btn-primary btn-block">
-                </div>
-                <div class="col-md-3"></div>
+                </form>
+                <div class="col-md-2"></div>
             </div>
-        </form>
+        </div>
     </section>
 
 </body>
