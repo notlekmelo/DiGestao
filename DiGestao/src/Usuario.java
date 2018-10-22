@@ -1,10 +1,11 @@
 
 public class Usuario extends Pessoa {
-	private String atvFis,meta;
+	private String atvFis,meta, sexo;
 	private float pesoKG ,alturaMetros;
 
-	public Usuario(String nome, String login, String senha, int idade, long cpf) {
+	public Usuario(String nome, String login, String senha, int idade, long cpf, String sexo) {
 		super(nome, login,senha,idade,cpf);
+		this.sexo = sexo;
 	}
 	
 	public String getAtvFis() {
