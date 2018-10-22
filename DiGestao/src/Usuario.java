@@ -7,39 +7,35 @@ public class Usuario extends Pessoa {
 		super(nome, login,senha,idade,cpf);
 	}
 	
-	private void setAtvFis(String atvFis) {
+	public String getAtvFis() {
+		return atvFis;
+	}
+	
+	public void setAtvFis(String atvFis) {
 		this.atvFis = atvFis;
 	}
-
-	public void enviaDuvida(String assunto,String mensagem) {
-		
+	
+	public String getMeta() {
+		return this.meta;
 	}
 	
 	public void setMeta(String meta) {
 		this.meta = meta;
 	}
 	
-	public String getMeta() {
-		return this.meta;
-	}
-		
-	public String getAtvFis() {
-		return atvFis;
-	}
-	
-	private float getPesoKG() {
+	public float getPesoKG() {
 		return pesoKG;
 	}
 
-	private void setPesoKG(float pesoKG) {
+	public void setPesoKG(float pesoKG) {
 		this.pesoKG = pesoKG;
 	}
 
-	private float getAlturaMetros() {
+	public float getAlturaMetros() {
 		return alturaMetros;
 	}
 
-	private void setAlturaMetros(float alturaMetros) {
+	public void setAlturaMetros(float alturaMetros) {
 		this.alturaMetros = alturaMetros;
 	}
 	
@@ -47,4 +43,11 @@ public class Usuario extends Pessoa {
 		//abrir o arquivo e mostras os dados do usuario
 		return "Nome: "+ getNome() +"\nLogin: "+ getLogin()+"\nIdade: " + getIdade()+"\nCPF: "+ getCpf() +"\nNível de atividade Física:"+ getAtvFis(); 
 	}
+	
+	public void enviaDuvida(String assunto,String mensagem) {
+		
+	}
+	
 }
+
+
