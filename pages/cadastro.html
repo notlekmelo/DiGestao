@@ -5,8 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>DiGestão - Cadastro</title>
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
-    teste
+
+    <section>
+        <form action="/action_page.php" class="row">
+            <div class="col-md-6 has-danger">
+                <div class="formgroup form-control-feedback">
+                    <h1>Cadastro de Usuário</h1>
+                    <label for="nome">Nome:</label>
+                    <input type="text" class="form-control" placeholder="Digite seu nome" required>
+                </div>
+                <div class="formgroup">
+                    <label for="usuario">Usuário: </label>
+                    <input type="text" class="form-control" placeholder="Digite seu nome de usuário" required>
+                </div>
+                <div class="formgroup">
+                        <label for="email">Email: </label>
+                        <input type="email" class="form-control" placeholder="Digite seu email" required>
+                    </div>
+                <div class="formgroup">
+                    <label for="senha">Senha: </label>
+                    <input type="password" class="form-control" placeholder="Digite sua senha" required>
+                </div>
+                <small class="form-text text-muted obs-dados">Seus dados não serão compartilhados com ninguém.</small>
+            </div>
+            <div class="col-md-6"></div>
+        </form>
+        <br>
+        <input type="submit" value="Enviar" class="btn btn-primary">
+    </section>
+
 </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </html>
