@@ -25,14 +25,18 @@ public class FORMServer implements Container {
 			response.setDate("Date", time);
 			response.setDate("Last-Modified", time);
 			
-			// Testa o objeto Query, que recupera dados de formulário
-			// pode ser testado com a URL: http://127.0.0.1:880/?nome=Ze;idade=32
+			// Testa o objeto Query, que recupera dados de formulï¿½rio
 			String nome = query.get("nome");
 			int idade = query.getInteger("idade");
+			String usuario = query.get("usuario");
+			String email = query.get("email");
+			String senha = query.get("senha");
+			String cpf = query.get("cpf");
+			String genero = query.get("genero");
 			
-			
-			body.println("Teste de requisição com dados de formulário.");
-			body.println("NOME: " + nome + "\nIDADE: " + idade + "");
+			body.println("Cadastro de UsuÃ¡rio.");
+			body.println("NOME: " + nome + "\nIDADE: " + idade + "\nNome de usuÃ¡rio: " + usuario + "\nEmail: " + email + 
+					"\nsenha: " + senha + "\nCPF: " + cpf + "\nGÃªnero: " + genero);
 			
 			
 			body.close();
@@ -42,20 +46,20 @@ public class FORMServer implements Container {
 	}
 
 	public static void main(String[] list) throws Exception {
-		// Se você receber uma mensagem
+		// Se vocï¿½ receber uma mensagem
 		// "Address already in use: bind error",
 		// tente mudar a porta.
 
-		int porta = 880;
+		int porta = 1337;
 
-		// Configura uma conexão soquete para o servidor HTTP.
+		// Configura uma conexï¿½o soquete para o servidor HTTP.
 		Container container = new FORMServer();
 		ContainerSocketProcessor servidor = new ContainerSocketProcessor(container);
 		Connection conexao = new SocketConnection(servidor);
 		SocketAddress endereco = new InetSocketAddress(porta);
 		conexao.connect(endereco);
 
-		// Testa a conexão abrindo o navegador padrão.
+		// Testa a conexï¿½o abrindo o navegador padrï¿½o.
 		Desktop.getDesktop().browse(new URI("http://127.0.0.1:" + porta));
 
 		System.out.println("Tecle ENTER para interromper o servidor...");

@@ -11,14 +11,13 @@ import org.simpleframework.http.core.ContainerSocketProcessor;
 import org.simpleframework.transport.connect.Connection;
 import org.simpleframework.transport.connect.SocketConnection;
 
-
 public class HTTPServer implements Container {
 	public void handle(Request request, Response response) {
 		try {
 			PrintStream body = response.getPrintStream();
 
 			response.setValue("Content-Type", "text/plain");
-			body.println("Olá, você requisitou: "+request.getPath());
+			body.println("OlÃ¡, vocÃª requisitou: "+request.getPath());
 			body.close();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -26,20 +25,19 @@ public class HTTPServer implements Container {
 	}
 
 	public static void main(String[] list) throws Exception {
-		// Se você receber uma mensagem 
+		// Se vocï¿½ receber uma mensagem 
 		// "Address already in use: bind error", 
 		// tente mudar a porta.
 		
-		int porta = 880;
+		int porta = 1337;
 
-		// Configura uma conexão soquete para o servidor HTTP.
+		// Configura uma conexï¿½o soquete para o servidor HTTP.
 		Container container = new HTTPServer();
 		ContainerSocketProcessor servidor = new ContainerSocketProcessor(container);
 		Connection conexao = new SocketConnection(servidor);
 		SocketAddress endereco = new InetSocketAddress(porta);
 		conexao.connect(endereco);
 		
-		//Testa a conexão abrindo o navegador padrão.
 		Desktop.getDesktop().browse(new URI("http://127.0.0.1:" + porta));
 
 		System.out.println("Tecle ENTER para interromper o servidor...");
