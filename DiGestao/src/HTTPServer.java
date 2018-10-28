@@ -1,4 +1,5 @@
 import java.awt.Desktop;
+import java.io.File;
 import java.io.PrintStream;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
@@ -37,7 +38,7 @@ public class HTTPServer implements Container {
 		Connection conexao = new SocketConnection(servidor);
 		SocketAddress endereco = new InetSocketAddress(porta);
 		conexao.connect(endereco);
-		
+	
 		Desktop.getDesktop().browse(new URI("http://127.0.0.1:" + porta));
 
 		System.out.println("Tecle ENTER para interromper o servidor...");

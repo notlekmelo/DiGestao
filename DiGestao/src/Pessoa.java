@@ -1,16 +1,28 @@
 
 public abstract class Pessoa {
-	private String nome,login,senha;
+	private String nome, login, email, senha;
 	private int idade;
 	private long cpf;
 
-	public Pessoa(String nome, String login, String senha, int idade, long cpf) {
+	public Pessoa(String nome, String login, String email, String senha, int idade, long cpf) {
 		this.nome = nome;
 		setLogin(login);
 		setSenha(senha);
 		setIdade(idade);
 		if(setCpf(cpf))
 			this.cpf = cpf;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 	public int getIdade() {

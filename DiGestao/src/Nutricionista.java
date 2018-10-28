@@ -3,8 +3,8 @@ public class Nutricionista extends Pessoa{
 	private long crn;
 	private String escolaridade;
 	
-	public Nutricionista(String nome, String login, String senha, int idade, long cpf, long crn, String escolaridade) {
-		super(nome, login,senha,idade,cpf);
+	public Nutricionista(String nome, String login, String email, String senha, int idade, long cpf, long crn, String escolaridade) {
+		super(nome, login, email, senha,idade,cpf);
 		this.escolaridade= escolaridade;
 		if(verificaCrn(crn)) {
 			this.crn=crn;
