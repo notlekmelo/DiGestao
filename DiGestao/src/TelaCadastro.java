@@ -10,7 +10,7 @@ public class TelaCadastro {
 		String confirma = JOptionPane.showInputDialog("Confirme sua senha: ");
 		String atvFis = JOptionPane.showInputDialog("Qual seu nível de atividade física: ");
 		int idade = Integer.parseInt(JOptionPane.showInputDialog("Digite sua idade: "));
-		long cpf = Long.parseLong(JOptionPane.showInputDialog("Digite seu cpf: "));
+		String cpf = JOptionPane.showInputDialog("Digite seu cpf: ");
 		//ValidaUsuario(usuario);
 		ValidaSenha(senha,confirma);
 		Usuario novo = new Usuario(nome, usuario, email, senha,idade, cpf ,atvFis);

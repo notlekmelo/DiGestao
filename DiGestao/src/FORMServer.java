@@ -88,15 +88,14 @@ public class FORMServer implements Container {
 			String email = query.get("email");
 			String senha = query.get("senha");
 			String cpf = query.get("cpf");
-			long cpfLong = Long.parseLong(cpf);
 			String genero = query.get("genero");
 			
 			// printa os dados do formulário numa página 
 			body.println("Cadastro de Usuário - Formulário direto:");
 			body.println("Nome: " + nome + "\nNome de usuário: " + usuario + "\nEmail: " + email + "\nIdade: " + idade +  
-					"\nsenha: " + senha + "\nCPF: " + cpfLong + "\nGênero: " + genero);
+					"\nsenha: " + senha + "\nCPF: " + cpf + "\nGênero: " + genero);
 			
-			Usuario user = new Usuario(nome, usuario, email, senha, idade, cpfLong, genero);
+			Usuario user = new Usuario(nome, usuario, email, senha, idade, cpf, genero);
 			
 			// passa dados do form para JSON
 			String dadosForm = javaParaJson(user);

@@ -2,15 +2,14 @@
 public abstract class Pessoa {
 	private String nome, login, email, senha;
 	private int idade;
-	private long cpf;
+	private String cpf;
 
-	public Pessoa(String nome, String login, String email, String senha, int idade, long cpf) {
+	public Pessoa(String nome, String login, String email, String senha, int idade, String cpf) {
 		this.nome = nome;
 		setLogin(login);
 		setSenha(senha);
 		setIdade(idade);
-		if(setCpf(cpf))
-			this.cpf = cpf;
+		setCpf(cpf);
 	}
 
 	public String getEmail() {
@@ -29,7 +28,7 @@ public abstract class Pessoa {
 		return idade;
 	}
 
-	public long getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
@@ -59,7 +58,10 @@ public abstract class Pessoa {
 			this.idade = idade;
 		//possivel lançamento de erro para certificar que o menor de 14 anos pode usar a aplicação
 	}
-
+	private void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+	/*
 	private boolean setCpf(long cpf){
 		long resto,multresult,nummult,soma=0,dig1,inicial,dig2;
 		boolean certo = false;
@@ -92,5 +94,6 @@ public abstract class Pessoa {
 		}
 		return certo;
 	}
+	*/
 
 }

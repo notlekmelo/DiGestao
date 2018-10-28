@@ -3,11 +3,11 @@ import java.io.Serializable;
 public class Usuario extends Pessoa implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private String atvFis,genero,meta;
+	private String atvFis, genero, meta;
 	private float pesoKG ,alturaMetros;
 
 	
-	public Usuario(String nome, String login, String email, String senha, int idade, long cpf, String genero) {
+	public Usuario(String nome, String login, String email, String senha, int idade, String cpf, String genero) {
 		super(nome, login, email, senha, idade, cpf);
 		this.genero = genero;
 	}
@@ -54,7 +54,7 @@ public class Usuario extends Pessoa implements Serializable {
 
 	public String consultaDados() {
 		//abrir o arquivo e mostras os dados do usuario
-		return "Nome: "+ getNome() +"\nLogin: "+ getLogin()+"\nIdade: " + getIdade()+"\nCPF: "+ getCpf() +"\nNï¿½vel de atividade Fï¿½sica:"+ getAtvFis(); 
+		return "Nome: "+ getNome() +"\nLogin: "+ getLogin()+"\nIdade: " + getIdade()+"\nCPF: "+ getCpf() +"\nNível de atividade Física:"+ getAtvFis(); 
 	}
 	
 	/*
