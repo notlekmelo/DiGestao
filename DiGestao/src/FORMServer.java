@@ -20,7 +20,8 @@ import java.io.IOException;
 import com.google.gson.Gson;
 
 public class FORMServer implements Container {
-	static Usuario userJsonPJava;
+	
+	Usuario userJsonPJava;
 	
 	public Usuario jsonParaJava(Usuario user) {
 		
@@ -35,17 +36,20 @@ public class FORMServer implements Container {
             userJsonPJava = obj;
             
             // printa no console os dados lidos do form
-            System.out.println("Nome: " + obj.getNome());
-            System.out.println("User: " + obj.getLogin());
-            System.out.println("Idade: " + obj.getIdade());
-            System.out.println("Senha: " + obj.getSenha());
-            System.out.println("Genero:" + obj.getGenero());
+            System.out.println("Nome: " + userJsonPJava.getNome());
+            System.out.println("Usuário: " + userJsonPJava.getLogin());
+            System.out.println("Email: " + userJsonPJava.getEmail());
+            System.out.println("Idade: " + userJsonPJava.getIdade());
+            System.out.println("Senha: " + userJsonPJava.getSenha());
+            System.out.println("Cpf: " + userJsonPJava.getCpf());
+            System.out.println("Genero:" + userJsonPJava.getGenero());
+            
+            return userJsonPJava;
  
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return userJsonPJava;
-      
+        return null;
 	}
 	
 	public String javaParaJson(Usuario obj) {
@@ -97,7 +101,7 @@ public class FORMServer implements Container {
 			
 			Usuario user = new Usuario(nome, usuario, email, senha, idade, cpf, genero);
 			
-			// passa dados do form para JSON
+			// passa dados do form para JSON e printa no browser
 			String dadosForm = javaParaJson(user);
 			body.println(" ");
 			body.println("Dados do formulário como JSON: ");
