@@ -26,60 +26,76 @@ public class CriarDieta {
 	
 	public void consultaParametros(Usuario anonimo) {
 		String[] vet = new String[15];
-		
+		// Precisamos inicializar vetor com as quantidades de nutrientes para cada tipo de dieta e pessoa. além de definir a meta melhor que dessa forma geral.
 		if(anonimo.getAtvFis().equals("Sedentario")) {
 			if(anonimo.getMeta().equals("Emagrecer")) {
 				kcal=(tmb*1.2)-200;
+				inicializar("Emagrecer",vet,4,anonimo.getPesoKG()-5);
 			}
 			if(anonimo.getMeta().equals("Engordar")) {
 				kcal=(tmb*1.2)+200;
+				inicializar("Engordar",vet,5,anonimo.getPesoKG()+4);
+			
 			}
 			if(anonimo.getMeta().equals("Manter")) {
 				kcal=tmb*1.2;
+				inicializar("Manter",vet,6,anonimo.getPesoKG());
 			}
 		}
 		if(anonimo.getAtvFis().equals("Baixo")) {
 			if(anonimo.getMeta().equals("Emagrecer")) {
 				kcal=(tmb*1.375)-200;
+				inicializar("Emagrecer",vet,4,anonimo.getPesoKG()-5);
 			}
 			if(anonimo.getMeta().equals("Engordar")) {
 				kcal=(tmb*1.375)+200;
+				inicializar("Engordar",vet,5,anonimo.getPesoKG()+4);
 			}
 			if(anonimo.getMeta().equals("Manter")) {
 				kcal=tmb*1.375;
+				inicializar("Manter",vet,6,anonimo.getPesoKG());
 			}
 		}
 		if(anonimo.getAtvFis().equals("Medio")) {
 			if(anonimo.getMeta().equals("Emagrecer")) {
 				kcal=(tmb*1.55)-200;
+				inicializar("Emagrecer",vet,4,anonimo.getPesoKG()-5);
 			}
 			if(anonimo.getMeta().equals("Engordar")) {
 				kcal=(tmb*1.55)+200;
+				inicializar("Engordar",vet,5,anonimo.getPesoKG()+4);
 			}
 			if(anonimo.getMeta().equals("Manter")) {
 				kcal=tmb*1.55;
+				inicializar("Manter",vet,6,anonimo.getPesoKG());
 			}
 		}
 		if(anonimo.getAtvFis().equals("Alto")) {
 			if(anonimo.getMeta().equals("Emagrecer")) {
 				kcal=(tmb*1.725)-200;
+				inicializar("Emagrecer",vet,4,anonimo.getPesoKG()-5);
 			}
 			if(anonimo.getMeta().equals("Engordar")) {
 				kcal=(tmb*1.725)+200;
+				inicializar("Engordar",vet,5,anonimo.getPesoKG()+4);
 			}
 			if(anonimo.getMeta().equals("Manter")) {
 				kcal=tmb*1.725;
+				inicializar("Manter",vet,6,anonimo.getPesoKG());
 			}
 		}
 		if(anonimo.getAtvFis().equals("Muito alto")) {
 			if(anonimo.getMeta().equals("Emagrecer")) {
 				kcal=(tmb*1.9)-200;
+				inicializar("Emagrecer",vet,4,anonimo.getPesoKG()-5);
 			}
 			if(anonimo.getMeta().equals("Engordar")) {
 				kcal=(tmb*1.9)+200;
+				inicializar("Engordar",vet,5,anonimo.getPesoKG()+4);
 			}
 			if(anonimo.getMeta().equals("Manter")) {
 				kcal=tmb*1.9;
+				inicializar("Manter",vet,6,anonimo.getPesoKG());
 			}
 		}
 	}
