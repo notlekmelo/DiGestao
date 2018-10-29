@@ -1,19 +1,84 @@
 <!DOCTYPE html>
-
-
-<html lang="pt-br">
-
-	<head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Co-authored by Ariel Barcelos, Karolina Vaz, Kelton Melo and Lucca Romaniello">
+    <meta name="keywords" content="comida, gestão alimentar, alimento, dieta, peso, balanceamento, controle, saúde, saudável, bem estar">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style-index.css">
+    <link rel="stylesheet" href="css/animate.min.css"><!--Logo and main phrase animations-->
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet"><!--Main phrase font-->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/jR3DCarousel.js"></script><!--Carousel script-->
+    <title>DiGestão</title>
+</head>
+<body>
     
-		<meta charset="UTF-8">
-		<meta name="keywords" content="">
-    	<meta name="description" content="">
-		<meta name="author" content="Co-authored by Ariel Barcelos, Karolina Vaz, Kelton Melo and Lucca Romaniello">
-		<title>DiGestão</title>
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <!--Navigation bar-->
+    <nav class="container-fluid nav--modifier">
+        <nav class="row">
+            <nav class="col-md-12 nav--display">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="dietas.html">Dietas</a></li>
+                    <li><a href="doacoes.html">Doações</a></li>
+                    <li><a href="entrarCadastro.html">Entrar/Cadastro</a></li>
+                </ul>       
+            </nav>
+        </nav>
+    </nav>
 
-	</head>
-	<body>
-	
-	<body>
+    <!--Page main content. Make it responsive later-->
+    <div class="container-fluid main--content">
+        <div class="row">
+            <div class="col-md-6 col-lg-6 col-sm-12">
+                <h2 class="main--title animated fadeInDown delay-2s">Controle sua alimentação de forma simples, rápida e prática. E o melhor: é de graça.</h2>
+                <button class="btn btn--modifier" onclick="cadastro.html">Cadastre-se</button>
+            </div>
+            <div class="col-sm-6 col-lg-6">
+                <img src="images/di_gestao.png" alt="Logo do site" class="main--logo animated">
+            </div>
+        </div>
+    </div>
+
+    <!--Nutritionist content. The empty div initialize a carousel-->
+    <div class="container-fluid">
+        <div class="row">
+            
+            <div class="jR3DCarouselGallery"></div>
+            
+        </div>
+    </div>
+
+    <script>
+        /*Add logo animation*/
+        $('.main--logo').hover(
+            function(){$(this).addClass('bounce')},
+            function(){$(this).removeClass('bounce')}
+        )
+
+        /*Add the first carousel*/
+        var slides = [
+                    {src = 'https://images.unsplash.com/photo-1536750559184-ab5c4f7edf08?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=39a4dbbc30c0e3ebb156eac47c3e0c05&auto=format&fit=crop&w=1482&q=80'},
+                    {src = 'https://images.unsplash.com/photo-1519377186336-eb61ee3ffa15?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1c023646e1c7b47091376c9b6755f5e7&auto=format&fit=crop&w=1480&q=80'},
+                    {src = 'https://images.unsplash.com/photo-1523446619710-112ccba40f35?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2b00a7cb67fdbd6fa4fd07817214ee9a&auto=format&fit=crop&w=1500&q=80'}
+                    ];
+
+        jR3DCarousel = $('.jR3DCarouselGallery').jR3DCarousel({
+            width: 300,
+            height: 300,
+            slides: slides,
+            slideLayout: 'contain',
+            animation: 'scroll',
+            autoplay: true,
+            controls: true
+        });
+    </script>
+
+</body>
+    
 </html>
