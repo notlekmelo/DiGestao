@@ -1,0 +1,9 @@
+html, body {
+    overflow-x: hidden;
+}
+
+.heading-cadastro {
+    padding: 10px;
+    text-align: center;
+    font-family: 'PT Sans', sans-serif;
+}
