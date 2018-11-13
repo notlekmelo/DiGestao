@@ -1,11 +1,11 @@
 
 public abstract class Pessoa {
-	private String nome, login, email, senha;
-	private int idade;
-	private String cpf;
 
-	public Pessoa(String nome, String login, String email, String senha, int idade, String cpf) {
+	private String nome, login, email, senha,cpf,idade;
+
+	public Pessoa(String nome, String login, String email, String senha, String idade, String cpf) {
 		this.nome = nome;
+		this.email= email;
 		setLogin(login);
 		setSenha(senha);
 		setIdade(idade);
@@ -24,7 +24,7 @@ public abstract class Pessoa {
 		this.nome = nome;
 	}
 
-	public int getIdade() {
+	public String getIdade() {
 		return idade;
 	}
 
@@ -53,8 +53,8 @@ public abstract class Pessoa {
 		this.senha = senha;
 	}
 
-	private void setIdade(int idade) {
-		if (idade > 14)
+	private void setIdade(String idade) {
+		//if (idade.compareTo("14") == 1)
 			this.idade = idade;
 		//possivel lançamento de erro para certificar que o menor de 14 anos pode usar a aplicação
 	}

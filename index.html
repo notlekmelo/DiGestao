@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,77 +9,221 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style-index.css">
-    <link rel="stylesheet" href="css/animate.min.css"><!--Logo and main phrase animations-->
-    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet"><!--Main phrase font-->
-    <script src="js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/css/iziModal.min.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.5.1/js/iziModal.min.js" type="text/css" />
     <script src="js/jquery.js"></script>
-    <script src="js/jR3DCarousel.js"></script><!--Carousel script-->
+    <script src="js/bootstrap.js"></script>
     <title>DiGestão</title>
 </head>
+
 <body>
-    
-    <!--Navigation bar-->
+
+
+
     <nav class="container-fluid nav--modifier">
         <nav class="row">
             <nav class="col-md-12 nav--display">
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="dietas.html">Dietas</a></li>
-                    <li><a href="doacoes.html">Doações</a></li>
-                    <li><a href="entrarCadastro.html">Entrar/Cadastro</a></li>
-                </ul>       
+                    <li><a href="dieta.html">Dietas</a></li>
+                    <li><a href="pages/planoAlimentar.html">Plano Alimentar</a></li>
+                    <li><a href="" data-toggle="modal" data-target="#exampleModal" id="entrar-cadastro">Entrar/Cadastro</a></li>
+                    <div id="bem-vindo"></div>
+                </ul>
             </nav>
         </nav>
     </nav>
 
-    <!--Page main content. Make it responsive later-->
     <div class="container-fluid main--content">
         <div class="row">
             <div class="col-md-6 col-lg-6 col-sm-12">
-                <h2 class="main--title animated fadeInDown delay-2s">Controle sua alimentação de forma simples, rápida e prática. E o melhor: é de graça.</h2>
-                <button class="btn btn--modifier" onclick="cadastro.html">Cadastre-se</button>
+                <h2 class="main--title animated fadeInDown delay-2s">Controle sua alimentação de forma simples, rápida
+                    e prática. E o melhor: é de graça.</h2>
+
             </div>
+            <!-- A partir daqui temos nosso modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Faça Login</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <h4 class="login_title">Entre em sua conta:</h4><br>
+                            <form method="POST">
+                                <label for="nome">E-mail:</label>
+                                <input type="email" id="emailInput" autocomplete="off" class="login_input" name="e-mail" placeholder="Digite seu e-mail..." required/><br> <br/>
+                                <label for="password">Senha:</label>
+                                <input type="password" id="senhaInput" class="login_input" name="password" placeholder="Digite sua senha..." required/><br>
+                                <label for="genero">Gênero:</label> <br>
+                            <input type="radio" name="tipo" value="nutricionista">
+                            <label for="masculino">Nutricionista</label> <br>
+                            <input type="radio" name="tipo" value="pessoa">
+                             <label for="masculino">Pessoa</label> <br>
+                            </form>
+                            <p>Ainda não possui uma conta? </p>
+                            <a class="login_cadastro" href="pages/cadastro-pessoa.html">Cadastre-se como usuário   </a> <br/>
+                            <a class="login_cadastro" href="pages/cadastro-nutricionista.html">Cadastre-se como nutricionista</a>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-primary" id="logar">Fazer login</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+          
+       
+            
+            
             <div class="col-sm-6 col-lg-6">
                 <img src="images/di_gestao.png" alt="Logo do site" class="main--logo animated">
             </div>
         </div>
     </div>
-
-    <!--Nutritionist content. The empty div initialize a carousel-->
-    <div class="container-fluid">
+    
+    <!--in progress-->
+       <div class="container">
         <div class="row">
+           
+            <form method="POST"enctype="multipart/form-data" class="col-md-8 form-control-feedback form__data--modifier">
+                 <h5 class="form__title--modifier">Experimente nossos cálculos</h5>
+                <label for="altura" class="label--modifier">Altura:</label>
+                <input type="text" id="alturaInput" class="form__input--modifier" name="altura" placeholder="Digite sua altura em metros" required/> <br/>
+                <label for="meta"class="label--modifier" >Meta:</label>
+                    <input type="radio" name="meta" value="Emagrecer">
+                    <label for="Emagrecer" class="label--modifier">Emagrecer</label> 
+                    <input type="radio" name="meta" value="Engordar">
+                    <label for="Engordar" class="label--modifier">Engordar</label> 
+                    <input type="radio" name="meta" value="Manter peso">
+                    <label for="manter peso" class="label--modifier">Manter Peso</label> <br>
+                <label for="peso" class="label--modifier">Peso:</label>
+                <input type="text" id="pesoKgInput" class="form__input--modifier" name="peso" placeholder="Digite seu peso em KG" required/> <br/>
+                <label for="Atividade" class="label--modifier">Nível de atividade física:</label>
+                    <input type="radio" name="atvFis" value=Sedentário"">
+                    <label for="Sedentário" class="label--modifier">Sedentário</label> 
+                    <input type="radio" name="atvFis" value="Baixo">
+                    <label for="Baixo" class="label--modifier">Baixo</label> 
+                    <input type="radio" name="atvFis" value="Medio">
+                    <label for="Médio" class="label--modifier">Médio</label>
+                    <input type="radio" name="atvFis" value="Alto">
+                    <label for="Alto" class="label--modifier">Alto</label>
+                    <input type="radio" name="atvFis" value="Atleta">
+                    <label for="Atleta" class="label--modifier">Atleta</label>
+                    <button class="btn btn-primary btn--modifier" id="setdados">Insira seus dados</button>
+            </form>
+            </div>
+            <br>
+            <div class="row">  
             
-            <div class="jR3DCarouselGallery"></div>
-            
-        </div>
+            </div> 
     </div>
-
+    
     <script>
-        /*Add logo animation*/
         $('.main--logo').hover(
-            function(){$(this).addClass('bounce')},
-            function(){$(this).removeClass('bounce')}
-        )
+            function () { $(this).addClass('bounce') },
+            function () { $(this).removeClass('bounce') }
+        );
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/default.js"></script>
+    <script type="text/javascript">
+        $('#logar').click(() => {
+            $.ajax({
+            url: 'http://127.0.0.1:7200/logar',
+            type: "POST",
+            data: ({
+              email: $('#emailInput').val(),
+              senha: $('#senhaInput').val(),
+              tipo: $("input[name='tipo']:checked").val()
+            }),
 
-        /*Add the first carousel*/
-        var slides = [
-                    {src = 'https://images.unsplash.com/photo-1536750559184-ab5c4f7edf08?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=39a4dbbc30c0e3ebb156eac47c3e0c05&auto=format&fit=crop&w=1482&q=80'},
-                    {src = 'https://images.unsplash.com/photo-1519377186336-eb61ee3ffa15?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=1c023646e1c7b47091376c9b6755f5e7&auto=format&fit=crop&w=1480&q=80'},
-                    {src = 'https://images.unsplash.com/photo-1523446619710-112ccba40f35?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2b00a7cb67fdbd6fa4fd07817214ee9a&auto=format&fit=crop&w=1500&q=80'}
-                    ];
+            success: function(response) {
 
-        jR3DCarousel = $('.jR3DCarouselGallery').jR3DCarousel({
-            width: 300,
-            height: 300,
-            slides: slides,
-            slideLayout: 'contain',
-            animation: 'scroll',
-            autoplay: true,
-            controls: true
+              if (response.status == 1) {
+
+                let usuario = {
+                    status: true,
+                    email: $('#emailInput').val(),
+                    senha: $('#senhaInput').val(),
+                    tipo: $("input[name='tipo']:checked").val()
+                };
+                
+                let mensagem = {
+                    status: true,
+                    type: "success",
+                    message: "Logado com sucesso"
+                };
+                
+                localStorage.setItem('usuario', JSON.stringify(usuario));
+                localStorage.setItem('mensagem', JSON.stringify(mensagem));
+                sessionStorage.setItem('userLogado', JSON.stringify(usuario.email));
+                location.reload();
+
+              }else {
+                msgError(response.message);
+              }
+            },
+            error: function(event) {
+              msgError("Erro de login")
+              console.log(event);
+            }
+
+          });
+        });
+        
+        $('#setdados').click(() =>{
+            $.ajax({
+                url: 'http://127.0.0.1:7200/index',
+                type: "POST",
+                data:({
+                    altura: $('#alturaInput').val(),
+                    atvFis: $("input[name='atvFis']:checked").val(),
+                    meta: $("input[name='meta']:checked").val(),
+                    pesoKg:$('#pesoKgInput').val()
+                }),
+                success: function(response) {
+
+              if (response.status == 1) {
+
+                let usuario = {
+                    altura: $('#alturaInput').val(),
+                    atvFis: $("input[name='atvFis']:checked").val(),
+                    meta: $("input[name='meta']:checked").val(),
+                    pesoKg:$('#pesoKgInput').val()
+                };
+                let mensagem = {
+                    status: true,
+                    type: "success",
+                    message: "Dados setados"
+                };
+                
+                let sobreporUser = localStorage.getItem("pessoa") + JSON.stringify(usuario);
+                localStorage.setItem("pessoa", sobreporUser);
+                localStorage.setItem(localStorage.getItem(pessoa).meta,usuario.meta);
+                localStorage.setItem('mensagem', JSON.stringify(mensagem));
+
+              } else {
+                msgError(response.message);
+              }
+            },
+            error: function(event) {
+              msgError("Erro de login")
+              console.log(event);
+            }
+            });
         });
     </script>
-
 </body>
-    
+
 </html>

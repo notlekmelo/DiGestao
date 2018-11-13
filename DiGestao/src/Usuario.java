@@ -1,15 +1,21 @@
 import java.io.Serializable;
 
-public class Usuario extends Pessoa implements Serializable {
+import org.json.JSONObject;
+
+public class Usuario extends Pessoa implements Serializable, JsonFormatter {
 
 	private static final long serialVersionUID = 1L;
-	private String atvFis, genero, meta;
-	private float pesoKG ,alturaMetros;
+	private String atvFis, genero, meta,pesoKG ,alturaMetros;
+
 
 	
-	public Usuario(String nome, String login, String email, String senha, int idade, String cpf, String genero) {
+	public Usuario(String nome, String login, String email, String senha, String  idade, String cpf, String genero) {
 		super(nome, login, email, senha, idade, cpf);
 		this.genero = genero;
+		this.atvFis=null;
+		this.alturaMetros =null;
+		this.meta = null;
+		this.pesoKG = null;
 	}
 	
 	public void enviaDuvida(String assunto,String mensagem) {
@@ -36,19 +42,19 @@ public class Usuario extends Pessoa implements Serializable {
 		this.meta = meta;
 	}
 	
-	public float getPesoKG() {
+	public String getPesoKG() {
 		return pesoKG;
 	}
 
-	public void setPesoKG(float pesoKG) {
+	public void setPesoKG(String pesoKG) {
 		this.pesoKG = pesoKG;
 	}
 
-	public float getAlturaMetros() {
+	public String getAlturaMetros() {
 		return alturaMetros;
 	}
 
-	public void setAlturaMetros(float alturaMetros) {
+	public void setAlturaMetros(String alturaMetros) {
 		this.alturaMetros = alturaMetros;
 	}
 
@@ -57,15 +63,27 @@ public class Usuario extends Pessoa implements Serializable {
 		return "Nome: "+ getNome() +"\nLogin: "+ getLogin()+"\nIdade: " + getIdade()+"\nCPF: "+ getCpf() +"\nNível de atividade Física:"+ getAtvFis(); 
 	}
 	
-	/*
 	@Override
-	public JSONObject toJson() {
-		JSONObject obj = new JSONObject();
-		obj.put("nome", this.getNome());
-		obj.put("senha", this.getSenha());
-		obj.put("idade", this.getIdade());
-		obj.put("genero", this.getGenero());
-		return obj;
+	public String toString() {
+			return "nome=" + getNome() + ", login=" + getLogin() + ", email=" + getEmail() + ", senha=" + getSenha() + ", cpf=" + getCpf()
+					+ ", idade=" + getIdade() + ", genero=" + genero;
 	}
-	*/
+
+	public JSONObject toJson() {
+
+        JSONObject obj = new JSONObject();
+        obj.put("nome", getNome());
+        obj.put("login", getLogin());
+        obj.put("email", getEmail());
+        obj.put("senha", getSenha());
+        obj.put("idade", getIdade());
+        obj.put("cpf", getCpf());
+        obj.put("genero", getGenero());
+        obj.put("altura", getAlturaMetros());
+        obj.put("peso", getPesoKG());
+        obj.put("atvFis", getAtvFis());
+        obj.put("meta", getMeta());
+        return obj;
+
+    }
 }

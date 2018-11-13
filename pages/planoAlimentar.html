@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Plano Alimentar</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Co-authored by Ariel Barcelos, Karolina Vaz, Kelton Melo and Lucca Romaniello">
+    <meta name="keywords" content="comida, gestão alimentar, alimento, dieta, peso, balanceamento, controle, saúde, saudável, bem estar">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="Style.CSS/planoAlimentar.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+
+            jQuery("#subirTopo").hide();
+
+            jQuery('a#subirTopo').click(function () {
+                jQuery('body,html').animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
+
+            jQuery(window).scroll(function () {
+                if (jQuery(this).scrollTop() > 1000) {
+                    jQuery('#subirTopo').fadeIn();
+                } else {
+                    jQuery('#subirTopo').fadeOut();
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <a id="subirTopo">
+        ^ <br> subir
+    </a>
+
+    <div class="container" id="Kcal">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" href="../index.html">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="#1">1.200 Kcal</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#2">1.500 Kcal</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#3">1.800 Kcal</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled" href="#4">2.000 Kcal</a>
+            </li>
+        </ul>
+    </div>
+    <div class="container" id="1">
+        <h2>Plano Alimentar 1200 Kcal</h2>
+        <ul id="1200kcal" class="nav nav-tabs">
+            <li class="active"><a data-toggle="tab" href="#12001">Opção 1</a></li>
+            <li><a data-toggle="tab" href="#12002">Opção 2</a></li>
+            <li><a data-toggle="tab" href="#12003">Opção 3</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="12001" class="tab-pane fade in active">
+                <h3>Café da Manhã</h3>
+                <p>01 xícara(150ml) de leite desnatado, café para completar;<br>
+                    01 fatias pão de forma light;<br>
+                    01 colher(chá) de margarina light<br></p>
+                <h3>Lanche da Manhã</h3>
+                <p>01 Pêra(pequena)</p>
+                <h3>Almoço</h3>
+                <p>À vontade - vegetais crus;<br>
+                    02 colheres (sopa) de arroz;<br>
+                    02 colheres (sopa) de feijão;<br>
+                    01 filé de frango (120g) grelhado;<br>
+                    04 colheres (sopa) de verdura/legumes refogados;<br>
+                    10 unidades de uvas<br>
+                </p>
+                <h3>Lanche da Tarde</h3>
+                <p>01 banana nanica (média)<br></p>
+                <h3>Jantar</h3>
+                <p>À vontade - vegetais crus;<br>
+                    03 colheres (sopa) purê de batata<br>
+                    01 porção (120g) de carne assada;<br>
+                    04 colheres(sopa) de verduras/legumes refogadas;<br>
+                    01 figo<br>
+                </p>
+                <h3>Ceia</h3>
+                <p>½ unidade de papaia;
+                    <br></p>
+            </div>
+
+
+
+            <div id="12002" class="tab-pane fade">
+                <h3>Café da Manhã</h3>
+                <p>01 iogurte light/diet;<br>
+                    Chá;<br>
+                    01 colheres (sopa) de cereal granola.<br></p>
+                <h3>Lanche da Manhã</h3>
+                <p>01 Pêra(pequena)</p>
+                <h3>Almoço</h3>
+                <p>A vontade - vegetais crus; 01 pegador de macarrão com molho de tomate + 01 colheres(chá) de queijo
+                    parmesão;<br>
+                    02 almôndegas de carne assada(100g);<br>
+                    04 colheres (sopa) de verduras/legumes refogados;<br>
+                    01 carambola(pequena<br>
+                </p>
+                <h3>Lanche da Tarde</h3>
+                <p>chá ou café;<BR>
+                    02 torradas integral com requeijão light<br></p>
+                <h3>Jantar</h3>
+                <p>Salada especial;<br>
+                    01 prato de vegetais crus;<br>
+                    01 colher(sopa) de cenoura ralada;<br>
+                    01 colher (sopa) de beterraba ralada;<br>
+                    80g de frango desfiado;<br>
+                    01 fatia de pão light torrado em cubos;<br>
+                    01 taça de salada de frutas<br>
+                </p>
+                <h3>Ceia</h3>
+                <p>01 colher(sopa) de passas
+                    <br></p>
+            </div>
+
+            <div id="12003" class="tab-pane fade">
+                <h3>Café da Manhã</h3>
+                <p>01 laranja pequena<br>
+                    02 colheres(chá) cheias de requeijão light<br>
+                    02 torradas integral<br></p>
+                <h3>Lanche da Manhã</h3>
+                <p>06 Damascos secos</p>
+                <h3>Almoço</h3>
+                <p>A vontade - vegetais crus; <br>
+                    01 panquecas de carne/frango;<br>
+                    04 colheres (sopa) de verduras/legumes refogados;<br>
+                    01 fatia(média) de melancia<br>
+                </p>
+                <h3>Lanche da Tarde</h3>
+                <p>01 barra de cereal até 90 calorias e 15g de carboidratos<br></p>
+                <h3>Jantar</h3>
+                <p>À vontade-vegetais crus;<br>
+                    02 fatias de pão light;<br>
+                    04 fatias de blanquet de peru;<br>
+                    01 fatias de queijo fresco(30g);<br>
+                    01 tomate em rodelas;<br>
+                    02 folhas de alface;<br>
+                    01 fatia(média) de melão<br>
+                </p>
+                <h3>Ceia</h3>
+                <p>01 taça pudim dietético<br>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="container" id="2">
+            <h2>Plano Alimentar 1500 Kcal</h2>
+            <ul id="1200kcal" class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#15001">Opção 1</a></li>
+                <li><a data-toggle="tab" href="#15002">Opção 2</a></li>
+                <li><a data-toggle="tab" href="#15003">Opção 3</a></li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="15001" class="tab-pane fade in active">
+                    <h3>Café da Manhã</h3>
+                    <p>01 fatia(média) de abacaxi;<br>
+                        01 xícara(150ml) de leite desnatado, café para completar;<br>
+                        01 fatias pão de forma light;<br>
+                        01 colher(chá) de margarina light<br></p>
+                    <h3>Lanche da Manhã</h3>
+                    <p>01 Maçã(pequena)</p>
+                    <h3>Almoço</h3>
+                    <p>À vontade - vegetais crus;<br>
+                        03 colheres (sopa) de arroz integral;<br>
+                        02 colheres (sopa) de feijão;<br>
+                        01 filé de frango/bovino (120g) grelhado;<br>
+                        04 colheres (sopa) de verdura/legumes refogados;<br>
+                        15 unidade de morango<br>
+                    </p>
+                    <h3>Lanche da Tarde</h3>
+                    <p>01 taça (pequena) de salada de frutas + 01 colhere (sobremesa) de cereal tipo granola sem açúcar<br></p>
+                    <h3>Jantar</h3>
+                    <p>À vontade - vegetais crus;<br>
+                        04 colheres (sopa) purê de batata<br>
+                        01 porção (120g) de carne assada;<br>
+                        04 colheres(sopa) de verduras/legumes refogadas;<br>
+                        01 figo<br>
+                    </p>
+                    <h3>Ceia</h3>
+                    <p>½ unidade de papaia;
+                        <br></p>
+                </div>
+
+
+
+                <div id="15002" class="tab-pane fade">
+                    <h3>Café da Manhã</h3>
+                    <p>½ unidade de papaia;<br>
+                        01 iogurte light/diet;<br>
+                        chá;<br>
+                        01 colheres (sopa) de cereal granola. ou cereal sem adição de açúcar<br></p>
+                    <h3>Lanche da Manhã</h3>
+                    <p>01 Barra de cereal até 90 kcal e 15g de carboidratos</p>
+                    <h3>Almoço</h3>
+                    <p>A vontade - vegetais crus; 02 colheres(grande) de macarrão com molho de tomate + 02
+                        colheres(chá) de queijo parmesão;<br>
+                        02 almôndegas de carne assada(100g);<br>
+                        04 colheres (sopa) de verduras/legumes refogados;<br>
+                        01 carambola(média)<br>
+                    </p>
+                    <h3>Lanche da Tarde</h3>
+                    <p>01 xícara(100ml) de leite desnatado;<br>
+                        chá ou café para completar;<br>
+                        02 torradas integral com requeijão light<br></p>
+                    <h3>Jantar</h3>
+                    <p>Salada especial;<br>
+                        01 prato de vegetais crus;<br>
+                        01 colher(sopa) de cenoura ralada;<br>
+                        01 colher (sopa) de beterraba ralada;<br>
+                        100g de frango desfiado;<br>
+                        02 colheres (chá) de azeite;<br>
+                        02 fatias de pão light torrada em cubos;<br>
+                        01 taça de salada de frutas<br>
+                    </p>
+                    <h3>Ceia</h3>
+                    <p>01 pêra;<br></p>
+                </div>
+
+                <div id="15003" class="tab-pane fade">
+                    <h3>Café da Manhã</h3>
+                    <p>01 fatia (média) de melão;<br>
+                        01 fatia(30g) de queijo fresco;<br>
+                        chá ou café;<br>
+                        02 torradas integral<br></p>
+                    <h3>Lanche da Manhã</h3>
+                    <p>06 Damascos secos</p>
+                    <h3>Almoço</h3>
+                    <p>A vontade - vegetais crus; <br>
+                        01 1/2 panquecas (média) de carne/frango/ricota;<br>
+                        04 colheres (sopa) de verduras/legumes refogados;<br>
+                        01 tangerina (pequena)<br>
+                    </p>
+                    <h3>Lanche da Tarde</h3>
+                    <p>01 xícara de cappuccino diet;<br>
+                        03 biscoitos de água e sal<br></p>
+
+                    <h3>Jantar</h3>
+                    <p>À vontade-vegetais crus;<br>
+                        02 fatias de pão light;<br>
+                        04 fatias de blanquet de peru;<br>
+                        01 fatias de queijo fresco(30g);<br>
+                        01 tomate em rodelas;<br>
+                        02 folhas de alface;<br>
+                        01 colheres(chá) de maionese light;<br>
+                        01 caqui<br>
+                    </p>
+                    <h3>Ceia</h3>
+                    <p>01 banana prata.<br>
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="container" id="3">
+                <h2>Plano Alimentar 1800 Kcal</h2>
+                <ul id="1200kcal" class="nav nav-tabs">
+                    <li class="active"><a data-toggle="tab" href="#18001">Opção 1</a></li>
+                    <li><a data-toggle="tab" href="#18002">Opção 2</a></li>
+                    <li><a data-toggle="tab" href="#18003">Opção 3</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div id="18001" class="tab-pane fade in active">
+                        <h3>Café da Manhã</h3>
+                        <p>01 fatia(média) de abacaxi;<br>
+                            01 xícara(150ml) de leite desnatado, café para completar;<br>
+                            02 fatias pão de forma light;<br>
+                            01 colher(chá) de margarina light<br></p>
+                        <h3>Lanche da Manhã</h3>
+                        <p>01 Maçã</p>
+                        <h3>Almoço</h3>
+                        <p>À vontade - vegetais crus;<br>
+                            04 colheres (sopa) de arroz integral;<br>
+                            02 colheres (sopa) de feijão;<br>
+                            01 filé de frango/bovino (120g) grelhado;<br>
+                            04 colheres (sopa) de verdura/legumes refogados;<br>
+                            15 unidade de morango<br>
+                        </p>
+                        <h3>Lanche da Tarde</h3>
+                        <p>01 taça de salada de frutas + 02 colheres (sobremesa) de cereal tipo granola sem açúcar<br></p>
+                        <h3>Jantar</h3>
+                        <p>À vontade - vegetais crus;<br>
+                            05 colheres (sopa) purê de batata<br>
+                            01 porção (120g) de carne assada;<br>
+                            04 colheres(sopa) de verduras/legumes refogadas;<br>
+                            01 caqu<br>
+                        </p>
+                        <h3>Ceia</h3>
+                        <p>½ unidade de papaia;
+                            <br></p>
+                    </div>
+
+
+
+                    <div id="18002" class="tab-pane fade">
+                        <h3>Café da Manhã</h3>
+                        <p>½ unidade de papaia;<br>
+                            01 iogurte light/diet;<br>
+                            chá;<br>
+                            02 colheres (sopa) de cereal granola.<br></p>
+                        <h3>Lanche da Manhã</h3>
+                        <p>01 Barra de cereal até 90 kcal e 15g de carboidratos</p>
+                        <h3>Almoço</h3>
+                        <p>A vontade - vegetais crus; <br>
+                            03 colheres(grande) de macarrão com molho de tomate + 02 colheres(chá) de queijo parmesão;<br>
+                            02 almôndegas de carne assada(100g);<br>
+                            04 colheres (sopa) de verduras/legumes refogados;<br>
+                            01 carambola(média<br>
+                        </p>
+                        <h3>Lanche da Tarde</h3>
+                        <p>01 xícara(150ml) de leite desnatado;<br>
+                            chá ou café para completar;<br>
+                            02 torradas integral;<br>
+                            02 colheres(chá) de requeijão light<br></p>
+                        <h3>Jantar</h3>
+                        <p>Salada especial;<br>
+                            01 prato de vegetais crus;<br>
+                            01 colher(sopa) de cenoura ralada;<br>
+                            01 colher (sopa) de beterraba ralada;<br>
+                            120g de frango desfiado;<br>
+                            02 colheres (chá) de azeite;<br>
+                            01 colher(sopa) de tomate seco;<br>
+                            02 fatias de pão light torrada em cubos;<br>
+                            01 taça de salada de frutas<br>
+                        </p>
+                        <h3>Ceia</h3>
+                        <p>01 pêra;<br></p>
+                    </div>
+
+                    <div id="18003" class="tab-pane fade">
+                        <h3>Café da Manhã</h3>
+                        <p>½ unidade de papaia;<br>
+                            01 fatia(30g) de queijo fresco;<br>
+                            chá ou café;<br>
+                            01 colher (sopa) de cereal granola.<br>
+                            02 torradas integral<br></p>
+                        <h3>Lanche da Manhã</h3>
+                        <p>01 Bananinha sem adição de açúcar</p>
+                        <h3>Almoço</h3>
+                        <p>A vontade - vegetais crus; <br>
+                            02 panquecas (média) de carne/frango/ricota;<br>
+                            04 colheres (sopa) de verduras/legumes refogados;<br>
+                            01 tangerina (pequena)<br>
+                        </p>
+                        <h3>Lanche da Tarde</h3>
+                        <p>01 xícara de cappuccino diet;<br>
+                            02 fatias de pão light;<br>
+                            01 queijo processado pasteurizado light<br></p>
+
+                        <h3>Jantar</h3>
+                        <p>À vontade-vegetais crus;<br>
+                            03 fatias de pão light;<br>
+                            06 fatias de blanquet de peru;<br>
+                            01 fatias de queijo fresco(40g);<br>
+                            01 tomate em rodelas;<br>
+                            02 folhas de alface;<br>
+                            01 colheres(chá) de maionese light;<br>
+                            01 figo<br>
+                        </p>
+                        <h3>Ceia</h3>
+                        <p>01 banana prata<br>
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="container" id="4">
+                    <h2>Plano Alimentar 2000 Kcal</h2>
+
+
+                    <ul id="2000kcal" class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#home">Opção 1</a></li>
+                        <li><a data-toggle="tab" href="#menu1">Opção 2</a></li>
+                        <li><a data-toggle="tab" href="#menu2">Opção 3</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div id="home" class="tab-pane fade in active">
+                            <h3>Café da Manhã</h3>
+                            <p>01 Fatia (média) de abacaxi;<br>
+                                01 xícara (150ml) de leite desnatado, café para completar;<br>
+                                02 fatias de pão de forma integral<br></p>
+                            <h3>Lanche da Manhã</h3>
+                            <p>01 Maçã</p>
+                            <h3>Almoço</h3>
+                            <p>À vontade - vegetais crus;<br>
+                                06 colheres (sopa) de arroz integral;<br>
+                                04 colheres (sopa) de feijão;<br>
+                                01 filé de frango/bovino (120g) grelhado;<br>
+                                06 colheres (sopa) de verdura/legumes refogados;<br>
+                                15 unidade de morango<br>
+                            </p>
+                            <h3>Lanche da Tarde</h3>
+                            <p>01 Taça de salada de frutas + 02 colheres(sobremesa) de cereal tipo granola sem açucar;<br>
+                                01 queijo processado<br></p>
+                            <h3>Jantar</h3>
+                            <p>À vontade - vegetais crus;<br>
+                                04 colheres (sopa) de arroz integral;<br>
+                                02 colheres (sopa) purê de batata<br>
+                                01 porção (120g) de carne assada;<br>
+                                06 colheres(sopa) de verduras/legumes refogadas.<br>
+                            </p>
+                            <h3>Ceia</h3>
+                            <p>½ unidade de papaia;<br>
+                                01 colher(sopa) cereal<br></p>
+                        </div>
+                        <div id="menu1" class="tab-pane fade">
+                            <h3>Café da Manhã</h3>
+                            <p>½ Unidade de mamão papaia;<br>
+                                01 iorgute light ;<br>
+                                02 colheres(sopa) de cereal granola;<br>
+                                01 fatia de queijo fresco(20g)<br></p>
+                            <h3>Lanche da Manhã</h3>
+                            <p>01 Barra de cereal até 9 kcal e 15g de carboidratos</p>
+                            <h3>Almoço</h3>
+                            <p>A vontade - vegetais crus; <br>
+                                04 colheres(grande) de macarrão com molho de tomate + 02 colheres(chá) de queijo
+                                parmesão;<br>
+                                02 almôndegas de carne assada(100g);<br>
+                                06 colheres (sopa) de verduras/legumes refogados;<br>
+                                01 carambola(média)<br>
+                            </p>
+                            <h3>Lanche da Tarde</h3>
+                            <p>01 xícara (200ml) de leite desnatado, chá ou café para completar ;<br>
+                                02 torradas integral;<br>
+                                02 colheres(chá) de requeijão light<br></p>
+                            <h3>Jantar</h3>
+                            <p>Salada especial;<br>
+                                01 prato de vegetais crus;<br>
+                                01 colher(sopa) de cenoura ralada;<br>
+                                01 colher (sopa) de beterraba ralada;<br>
+                                120g de frango desfiado;<br>
+                                02 colheres (chá) de azeite;<br>
+                                01 colher(sopa) de tomate seco;<br>
+                                02 fatias de pão light torrada em cubos;<br>
+                                01 taça de salada de frutas<br>
+                            </p>
+                            <h3>Ceia</h3>
+                            <p>01 pêra;<br>
+                                01 queijo processado light<br></p>
+                        </div>
+                        <div id="menu2" class="tab-pane fade">
+                            <h3>Café da Manhã</h3>
+                            <p>½ Unidade de mamão papaia;
+                                01 colher(sopa) de cereal granola;<br>
+                                01 fatia(30g) de queijo fresco;<br>
+                                Chá ou café;<br>
+                                02 torradas integral;<br>
+                                02 colheres(chá) de geleia diet<br></p>
+                            <h3>Lanche da Manhã</h3>
+                            <p>01 Banana nanica</p>
+                            <h3>Almoço</h3>
+                            <p>A vontade - vegetais crus; <br>
+                                03 panquecas (média) de carne/frango/ricota;<br>
+                                04 colheres (sopa) de verduras/legumes refogados;<br>
+                                01 tangerina (média)<br>
+                            </p>
+                            <h3>Lanche da Tarde</h3>
+                            <p>01 xícara de capuccino diet;<br>
+                                02 fatias de pão integral;<br>
+                                01 queijo processado light;<br>
+                                02 colheres (chá) de geleia diet.<br></p>
+                            <h3>Jantar</h3>
+                            <p>À vontade-vegetais crus;<br>
+                                04 fatias de pão light;<br>
+                                02 fatias de queijo fresco(20g/cada);<br>
+                                04 folhas de alfa0ce;<br>
+                                02 colheres(chá) de maionese light;<br>
+                                01 taça de gelatina com ½ frutas picada.<br>
+                            </p>
+                            <h3>Ceia</h3>
+                            <p>½ copo(100ml) de iorgute natural desnatado + 01 colher(sobremesa) de uvas passas.<br>
+                            </p>
+                        </div>
+
+                    </div>
+
+
+
+</body>
+
+</html>

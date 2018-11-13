@@ -1,5 +1,5 @@
 
-public class CriarDieta {
+public class Dieta {
 	private String tipoDieta;
 	private float metaKg;
 	private String[] dosagemAlimentos = new String[15];
@@ -11,10 +11,10 @@ public class CriarDieta {
 	}
 
 	public void preencherAlimentosHist() {
-		//Neste m√©todo o usu√°rio preencher√° o que comeu e haver√° o calculo do que falta comer.
+		//Neste mÈtodo o usu·rio preencher· o que comeu e haver· o calculo do que falta comer.
 	}
 	
-	public double tmb(double peso, double altura,double idade,String sexo) {
+	public double tmb(double peso, double altura,int idade,String sexo) {
 		if(sexo.equals("M")) {
 			 tmb= 88.36+(13.4*peso)+(4.8*(altura*100))-(5.7*idade);
 		}
@@ -26,7 +26,7 @@ public class CriarDieta {
 	
 	public void consultaParametros(Usuario anonimo) {
 		String[] vet = new String[15];
-		// Precisamos inicializar vetor com as quantidades de nutrientes para cada tipo de dieta e pessoa. al√©m de definir a meta melhor que dessa forma geral.
+		// Precisamos inicializar vetor com as quantidades de nutrientes para cada tipo de dieta e pessoa. alÈm de definir a meta melhor que dessa forma geral.
 		if(anonimo.getAtvFis().equals("Sedentario")) {
 			if(anonimo.getMeta().equals("Emagrecer")) {
 				kcal=(tmb*1.2)-200;
@@ -100,8 +100,8 @@ public class CriarDieta {
 		}
 	}
 
-	//Por enquanto a dieta n√£o recebe qual alimento deve comer, somente as quantidades de cada tipo de nutriente. A Meta definida vai ser comparada
-	//com o peso que ela alcan√ßou. a dosagem e um vetor q define qtd de cada tipo de nutriente.
+	//Por enquanto a dieta n„o recebe qual alimento deve comer, somente as quantidades de cada tipo de nutriente. A Meta definida vai ser comparada
+	//com o peso que ela alcanÁou. a dosagem e um vetor q define qtd de cada tipo de nutriente.
 	public void inicializar(String tipoDieta, String[] dosagemAlimentos, int tempoDieta, float meta) {
 		this.tipoDieta= tipoDieta;
 		this.dosagemAlimentos = dosagemAlimentos;
