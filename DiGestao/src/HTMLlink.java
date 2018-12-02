@@ -1,17 +1,12 @@
-import java.awt.Desktop;
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
-import java.net.URI;
 
 import org.json.JSONObject;
-import org.simpleframework.http.Query;
 import org.simpleframework.http.Request;
 import org.simpleframework.http.Response;
 import org.simpleframework.http.Status;
@@ -19,8 +14,6 @@ import org.simpleframework.http.core.Container;
 import org.simpleframework.http.core.ContainerSocketProcessor;
 import org.simpleframework.transport.connect.Connection;
 import org.simpleframework.transport.connect.SocketConnection;
-
-
 
 public class HTMLlink implements Container {
 
@@ -61,53 +54,23 @@ public class HTMLlink implements Container {
 			// Verifica qual ação está sendo chamada
 
 			if (path.startsWith("/cadastro-nutricionista")) {
-				JSONObject obj = new JSONObject();
-				try {
-					nutri = nutricionista.cadastroNutric(request);
-					cadastroListaNutri(nutri);
-					obj.put("status", 1);
-					obj.put("message", "Cadastro Feito com sucesso");
-					try(FileWriter arqNut = new FileWriter("ArquivoNutricionistas", true);
-							BufferedWriter bw = new BufferedWriter(arqNut);
-							PrintWriter escreve = new PrintWriter(bw))
-					{
-						escreve.println(nutri);
-					} catch (IOException e) {
-						System.out.println("Deu ruim no arquivo");
-					}
-				} catch (Exception e) {
-					obj.put("status", 0);
-					obj.put("type", e.getClass());
-					obj.put("stackTrace", e.getStackTrace());
-					obj.put("message", e.getMessage());
-				}
-
-				this.enviaResposta(Status.CREATED, response, obj.toString());
+				NutricionistaService.trataCadastro(request,response);
 			}
 
 			if (path.startsWith("/cadastro-pessoa")) {
-				JSONObject obj = new JSONObject();
-				try {
-					user = usuario.cadastroUser(request);
-					cadastroListaUser(user);
-					obj.put("status", 1);
-					obj.put("message", "Cadastro feito com sucesso");
-					try(FileWriter arqUser = new FileWriter("ArquivoUsuarios", true);
-							BufferedWriter bw = new BufferedWriter(arqUser);
-							PrintWriter escreve = new PrintWriter(bw))
-					{
-						escreve.println(user);
-					} catch (IOException e) {
-						System.out.println("Deu ruim no arquivo");
-					}
-				} catch (Exception e) {
-					obj.put("status", 0);
-					obj.put("type", e.getClass());
-					obj.put("stackTrace", e.getStackTrace());
-					obj.put("message", e.getMessage());
-					System.out.println(e.getMessage());
-				}
-				this.enviaResposta(Status.CREATED, response, obj.toString());
+				UsuarioService.trataCadastro(request, response);
+			}
+			
+			if(path.startsWith("/alimentacao")) {
+				AlimentoService.adicionaAlimento(request, response);
+			}
+			
+			if(path.startsWith("/alimentacao1")) {
+				AlimentoService.removeAlimento();
+			}
+			
+			if(path.startsWith("/alimentacao2")) {
+				AlimentoService.finalizaDieta();
 			}
 			
 			if (path.startsWith("/index")) {
@@ -127,7 +90,7 @@ public class HTMLlink implements Container {
 					obj.put("message", e.getMessage());
 					System.out.println(e.getMessage());
 				}
-				this.enviaResposta(Status.CREATED, response, obj.toString());
+				enviaResposta(Status.CREATED, response, obj.toString());
 			}
 
 			if (path.startsWith("/logar")) {
@@ -143,72 +106,11 @@ public class HTMLlink implements Container {
 					}*/
 					
 					if (vetorUser[2].equals("nutricionista")) {
-						try {
-							String email = vetorUser[0];
-							String senha = vetorUser[1];
-							System.out.println("email: " + email);
-							System.out.println("senha: " + senha);
-							
-							String arqNutricionista = "C:/Users/kelto/Documents/puc/Tis_2/DiGestao/DiGestao/ArquivoNutricionistas";
-							FileReader arq = new FileReader(arqNutricionista);
-							BufferedReader lerArq = new BufferedReader(arq);
-							String linha = lerArq.readLine();
-							
-							while (linha != null) {
-								System.out.println(linha); // printa o arquivo todo
-								if (linha.contains("email=" + email) & (linha.contains("senha=" + senha)))
-									System.out.println("Usuário logado! Email: " + email + " Senha: " + senha);
-								linha = lerArq.readLine();
-							}
-							
-							obj.put("status", 1);
-							obj.put("message", "Dados atualizados com sucesso");
-							arq.close();
-						} 
-						 catch (Exception e) {
-							obj.put("status", 0);
-							obj.put("type", e.getClass());
-							obj.put("stackTrace", e.getStackTrace());
-							obj.put("message", e.getMessage());
-							System.out.println("Erro na abertura do arquivo nutricionistas.");
-							System.out.println(e.getMessage());
-						}
-						this.enviaResposta(Status.CREATED, response, obj.toString());
+						NutricionistaService.login(vetorUser, response);
 					}
 					
 					if (vetorUser[2].equals("pessoa")) {
-						try {
-					
-							String email = vetorUser[0];
-							String senha = vetorUser[1];
-							System.out.println("email: " + email);
-							System.out.println("senha: " + senha);
-							
-							String arqUsuarios = "C:/Users/kelto/Documents/puc/Tis_2/DiGestao/DiGestao/ArquivoUsuarios";
-							FileReader arq = new FileReader(arqUsuarios);
-							BufferedReader lerArq = new BufferedReader(arq);
-							String linha = lerArq.readLine();
-							
-							while (linha != null) {
-								System.out.println(linha); // printa o arquivo todo
-								if (linha.contains("email=" + email) & (linha.contains("senha=" + senha)))
-									System.out.println("Usuário logado! Email: " + email + " Senha: " + senha);
-								linha = lerArq.readLine();
-							}
-							
-							obj.put("status", 1);
-							obj.put("message", "Dados atualizados com sucesso");
-							arq.close();
-							
-						} catch (Exception e) {
-							obj.put("status", 0);
-							obj.put("type", e.getClass());
-							obj.put("stackTrace", e.getStackTrace());
-							obj.put("message", e.getMessage());
-							System.out.println("Erro na abertura do arquivo usu�rios .");
-							System.out.println(e.getMessage());
-						}
-						this.enviaResposta(Status.CREATED, response, obj.toString());
+						UsuarioService.login(vetorUser, response);
 					}
 				} catch (Exception e) {
 					obj.put("status", 0);
@@ -224,7 +126,7 @@ public class HTMLlink implements Container {
 		}
 	}
 
-	private void enviaResposta(Status status, Response response, String str) throws Exception {
+	public static void enviaResposta(Status status, Response response, String str) throws Exception {
 		PrintStream body = response.getPrintStream();
 		long time = System.currentTimeMillis();
 		response.setValue("Content-Type", "application/json");

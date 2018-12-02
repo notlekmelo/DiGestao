@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DiGestão - Contato</title>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/cadastro.css">
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <form method="POST" action="https://formspree.io/digestaotis2018@gmail.com">
+                
+                <h1 class="heading-cadastro">Contato</h1>
+                
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input name="nome" class="form-control" placeholder="Digite seu nome">
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="form-control" placeholder="Digite seu e-mail">
+                </div>
+                  
+                <div class="form-group">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea name="mensagem" class="form-control" rows="3" placeholder="Digite sua mensagem"></textarea>
+                </div>
+                
+                <small class="form-text text-muted">Seus dados não serão compartilhados com ninguém.</small>
+                <button type="submit" class="btn btn-primary">Enviar</button>
+            </form>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</body>
+</html>

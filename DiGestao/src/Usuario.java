@@ -5,22 +5,23 @@ import org.json.JSONObject;
 public class Usuario extends Pessoa implements Serializable, JsonFormatter {
 
 	private static final long serialVersionUID = 1L;
-	private String atvFis, genero, meta,pesoKG ,alturaMetros;
+	private String atvFis, genero, meta;
+	private float pesoKG ,alturaMetros;
 
 
 	
-	public Usuario(String nome, String login, String email, String senha, String  idade, String cpf, String genero) {
-		super(nome, login, email, senha, idade, cpf);
+	public Usuario(String nome, String email, String senha, String  idade, String cpf, String genero) {
+		super(nome, email, senha, idade, cpf);
 		this.genero = genero;
 		this.atvFis=null;
-		this.alturaMetros =null;
+		this.alturaMetros =0.0F;
 		this.meta = null;
-		this.pesoKG = null;
+		this.pesoKG = 0.0F;
 	}
 	
-	public void enviaDuvida(String assunto,String mensagem) {
+	public Usuario() {
 		
-	}
+	} 
 	
 	public String getAtvFis() {
 		return this.atvFis;
@@ -42,30 +43,30 @@ public class Usuario extends Pessoa implements Serializable, JsonFormatter {
 		this.meta = meta;
 	}
 	
-	public String getPesoKG() {
+	public float getPesoKG() {
 		return pesoKG;
 	}
 
-	public void setPesoKG(String pesoKG) {
-		this.pesoKG = pesoKG;
+	public void setPesoKG(float f) {
+		this.pesoKG = f;
 	}
 
-	public String getAlturaMetros() {
+	public float getAlturaMetros() {
 		return alturaMetros;
 	}
 
-	public void setAlturaMetros(String alturaMetros) {
-		this.alturaMetros = alturaMetros;
+	public void setAlturaMetros(float f) {
+		this.alturaMetros = f;
 	}
 
 	public String consultaDados() {
 		//abrir o arquivo e mostras os dados do usuario
-		return "Nome: "+ getNome() +"\nLogin: "+ getLogin()+"\nIdade: " + getIdade()+"\nCPF: "+ getCpf() +"\nNível de atividade Física:"+ getAtvFis(); 
+		return "Nome: "+ getNome() +"\nIdade: " + getIdade()+"\nCPF: "+ getCpf() +"\nNível de atividade Física:"+ getAtvFis(); 
 	}
 	
 	@Override
 	public String toString() {
-			return "nome=" + getNome() + ", login=" + getLogin() + ", email=" + getEmail() + ", senha=" + getSenha() + ", cpf=" + getCpf()
+			return "nome=" + getNome() + ", email=" + getEmail() + ", senha=" + getSenha() + ", cpf=" + getCpf()
 					+ ", idade=" + getIdade() + ", genero=" + genero;
 	}
 
@@ -73,7 +74,6 @@ public class Usuario extends Pessoa implements Serializable, JsonFormatter {
 
         JSONObject obj = new JSONObject();
         obj.put("nome", getNome());
-        obj.put("login", getLogin());
         obj.put("email", getEmail());
         obj.put("senha", getSenha());
         obj.put("idade", getIdade());

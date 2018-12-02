@@ -49,7 +49,7 @@ $( document ).ready(function() {
       var n = JSON.parse(localStorage.getItem('nutricionista'));
       var uL = JSON.parse(sessionStorage.getItem('userLogado'));
       if (uL == us.email) {
-        $('#bem-vindo').append("Seja Bem Vindo, " + us.nome);
+        $('#bem-vindo').append("<li style='color:orange'>Seja Bem Vindo, " + us.nome +"</li>");
         $('#bem-vindo').append("<button>Sair</button>");
         $('#bem-vindo button').attr("id", "btnSair");
         $('#bem-vindo button').attr("onclick", "limpaStorage()");
@@ -58,7 +58,7 @@ $( document ).ready(function() {
         document.getElementById("entrar-cadastro").style.display = "none";
       }
       if (uL == n.email) {
-        $('#bem-vindo').append("Seja Bem Vindo, " + n.nome);
+        $('#bem-vindo').append("<li style='color:orange'>Seja Bem Vindo, " + us.nome +"</li>");
         $('#bem-vindo').append("<button>Sair</button>");
         $('#bem-vindo button').attr("id", "btnSair");
         $('#bem-vindo button').attr("onclick", "limpaStorage()");

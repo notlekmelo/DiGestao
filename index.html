@@ -27,8 +27,7 @@
             <nav class="col-md-12 nav--display">
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="dieta.html">Dietas</a></li>
+                    <li><a href="pages/contato.html">Contate-nos</a></li>
                     <li><a href="pages/planoAlimentar.html">Plano Alimentar</a></li>
                     <li><a href="" data-toggle="modal" data-target="#exampleModal" id="entrar-cadastro">Entrar/Cadastro</a></li>
                     <div id="bem-vindo"></div>
@@ -93,7 +92,7 @@
     <!--in progress-->
        <div class="container">
         <div class="row">
-           
+           <div class="col-6">
             <form method="POST"enctype="multipart/form-data" class="col-md-8 form-control-feedback form__data--modifier">
                  <h5 class="form__title--modifier">Experimente nossos cálculos</h5>
                 <label for="altura" class="label--modifier">Altura:</label>
@@ -120,6 +119,10 @@
                     <label for="Atleta" class="label--modifier">Atleta</label>
                     <button class="btn btn-primary btn--modifier" id="setdados">Insira seus dados</button>
             </form>
+            </div>
+            <div class="col-6">
+                <button type="button" class="btn btn-primary" id="alimentacao">Preencha sua alimentação</button>
+            </div>
             </div>
             <br>
             <div class="row">  
@@ -222,6 +225,12 @@
               console.log(event);
             }
             });
+        });
+
+        $('#alimentacao').click(()=>{
+            if(localStorage.getItem("usuario") != null){
+                location.href = "pages/alimentacao.html"
+            }
         });
     </script>
 </body>

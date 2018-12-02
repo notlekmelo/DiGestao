@@ -109,19 +109,52 @@ public class Dieta {
 		this.metaKg = meta;
 	}
 
-	private String getTipoDieta() {
+	public String getTipoDieta() {
 		return tipoDieta;
 	}
 
-	private float getMetaKg() {
+	public float getMetaKg() {
 		return metaKg;
 	}
 
-	private String[] getDosagemAlimentos() {
+	public String[] getDosagemAlimentos() {
 		return dosagemAlimentos;
 	}
 
-	private int getTempoDietaMeses() {
+	public int getTempoDietaMeses() {
 		return tempoDietaMeses;
+	}
+
+	public void setTempoDietaMeses(int parseInt) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setTipoDieta(String idSTR) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setMetaKg(float parseFloat) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setTmb(double parseDouble) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void setKcal(double parseDouble) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public double getTmb() {
+		return tmb;
+	}
+
+	public double getKcal() {
+		return kcal;
 	}
 }

@@ -6,6 +6,13 @@ body{
     overflow-x: hidden;
 }
 
+.alimento{
+    margin-left: 50px;
+    margin-top: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+}
+
 .nav--modifier{
     background-color: rgb(6, 92, 6);
     opacity: 0.55;
@@ -54,4 +61,17 @@ body{
     height: 400px;
     width: 500px;
     margin-top: 60px;
+}
+#inputAlimento{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    margin-left: 15px;
+}
+
+#adiciona{
+    margin-left: 200px;
+    margin-right: 25px;
+}
+#remove{
+    margin-right: 25px;
 }

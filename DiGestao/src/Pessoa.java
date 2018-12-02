@@ -1,12 +1,13 @@
 
 public abstract class Pessoa {
 
-	private String nome, login, email, senha,cpf,idade;
+	private String nome, email, senha,cpf,idade;
 
-	public Pessoa(String nome, String login, String email, String senha, String idade, String cpf) {
+	public Pessoa() {}
+
+	public Pessoa(String nome, String email, String senha,String idade, String cpf) {
 		this.nome = nome;
 		this.email= email;
-		setLogin(login);
 		setSenha(senha);
 		setIdade(idade);
 		setCpf(cpf);
@@ -36,16 +37,8 @@ public abstract class Pessoa {
 		return nome;
 	}
 
-	public String getLogin() {
-		return login;
-	}
-
 	public String getSenha() {
 		return senha;
-	}
-
-	private void setLogin(String login) {
-		this.login = login;
 	}
 
 	private void setSenha(String senha) {
@@ -54,46 +47,19 @@ public abstract class Pessoa {
 	}
 
 	private void setIdade(String idade) {
-		//if (idade.compareTo("14") == 1)
+		if (Integer.parseInt(idade)>=14)
 			this.idade = idade;
 		//possivel lançamento de erro para certificar que o menor de 14 anos pode usar a aplicação
 	}
 	private void setCpf(String cpf) {
 		this.cpf = cpf;
 	}
-	/*
-	private boolean setCpf(long cpf){
-		long resto,multresult,nummult,soma=0,dig1,inicial,dig2;
-		boolean certo = false;
-		inicial = cpf/100;
-		nummult = 9;
-		dig2 = cpf%10;
-		dig1 = cpf%100 - dig2;
-		while (cpf>=1){
-			resto=cpf%10;
-			cpf=cpf/10;
-			multresult=resto*nummult;
-			soma=soma+multresult;
-			nummult=nummult-1;
-		}
-		if(dig1 == soma%11) {
-			cpf = (inicial*10)+dig1;
-			nummult=9;
-			soma=0;
-			while (cpf>0){
-				resto=cpf%10;
-				cpf=cpf/10;
-				multresult=resto*nummult;
-				soma=soma+multresult;
-				nummult=nummult-1;
-			}
-			if (dig2 == soma%11) {
-				certo = true;
-			}
 
-		}
-		return certo;
-	}
-	*/
+//	private boolean setCpf(String cpf) {
+//	if(Long.parseLong(cpf) > 11111111111 && Long.parseLong(cpf) < 99999999999) 
+//		return true;
+//	else return false;
+//}
+
 
 }
